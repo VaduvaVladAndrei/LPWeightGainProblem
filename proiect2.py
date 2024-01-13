@@ -46,13 +46,19 @@ def define_problem():
     # Quantity constraints
     for day in range(0, 7):
         for food in range(0, len(foods)):
-            model += variables[day][food] <= 10
+            model += variables[day][food] <= 3
 
     for food in range(0, len(foods)):
         s = 0
         for day in range(0, 7):
             s += variables[day][food]
         model += s >=2
+
+    # for day in range(0,7):
+    #     s=0
+    #     for food in range(0,len(foods)):
+    #         s+=variables[day][food]
+    #     model+=s<=19
 
     # Precedence constraints
     for day in range(1, 7):
