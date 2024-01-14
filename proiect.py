@@ -46,7 +46,7 @@ def define_problem():
     # Quantity constraints
     for day in range(0, 7):
         for food in range(0, len(foods)):
-            model += variables[day][food] <= 4
+            model += variables[day][food] <= 5
 
     # Minimum quantity constraints
     for food in range(0, len(foods)):
